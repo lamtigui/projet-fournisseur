@@ -28,12 +28,14 @@
                         @method('PUT')
 
                         <div class="row g-3">
+
+
                             <div class="col-md-6">
                                 <div class="form-check bg-light p-3 rounded border">
                                     <input class="form-check-input" type="checkbox" name="can_see_prospects" id="prospects"
                                            {{ $permissions->can_see_prospects ? 'checked' : '' }}>
                                     <label class="form-check-label fw-semibold" for="prospects">
-                                        <i class="bi bi-person-lines-fill me-2"></i>Voir Prosperts
+                                        <i class="bi bi-person-lines-fill me-2"></i>Voir Clients
                                     </label>
                                 </div>
                             </div>
@@ -43,7 +45,7 @@
                                     <input class="form-check-input" type="checkbox" name="can_see_clients" id="clients"
                                            {{ $permissions->can_see_clients ? 'checked' : '' }}>
                                     <label class="form-check-label fw-semibold" for="clients">
-                                        <i class="bi bi-people-fill me-2"></i>Voir Clients
+                                        <i class="bi bi-people-fill me-2"></i>Voir Prosperts
                                     </label>
                                 </div>
                             </div>
