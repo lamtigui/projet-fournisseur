@@ -1,0 +1,182 @@
+
+
+.show-remark{
+    position: relative;
+    bottom: 30px;
+    padding-bottom: 235px;
+}
+
+.showRemarkProspect{
+    position: absolute;
+    left: 140px;
+    top: 18px;
+}
+
+.show-info-prospect{
+    position: relative;
+}
+
+.label-detail-prospect{
+    margin-left: 5px;
+    margin-top: 16px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(122, 118, 118);
+}
+
+
+.showNameProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showEmailProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showContactProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showAdressProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showVilleProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showSocietyProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showGSM1Prospect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showGSM2Prospect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+.showCategoryProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showUserProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.show-user{
+    position: relative;
+    /* left: 180px; */
+    bottom: 37px;
+}
+
+
+.showProductProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.show-product-supplier{
+    margin-top: 17px;
+}
+
+/* query  */
+
+
+#showNameProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showEmailProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showContactProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showAdressProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showVilleProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showSocietyProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showGSM1Prospect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showGSM2Prospect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showCategoryProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+
+#showUserProspect{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#show-product-prospect{
+    margin-top: 17px;
+}
+
+#show-remark{
+    position: relative;
+    bottom: 30px;
+    padding-bottom: 235px;
+}
+
+#showRemarkProspect{
+    position: absolute;
+    left: 140px;
+    top: 18px;
+}

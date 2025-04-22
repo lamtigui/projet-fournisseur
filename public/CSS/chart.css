@@ -1,0 +1,48 @@
+.page-inner{
+    position:relative;
+    top:100px;
+}
+
+.fa-info-cercle{
+    background-color: #6861CE;
+}
+
+#btn-info{
+    border: none;
+    background-color: #31CE36;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    border-radius: 10px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    margin-right: 117px;
+}
+
+.show-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+#showName{
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* @media (max-width: 768px) {
+    .firstRowChart{
+        margin-left: 100px;
+
+
+
+
+
+
+    }
+} */

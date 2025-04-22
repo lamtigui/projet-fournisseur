@@ -1,0 +1,188 @@
+
+
+.show-info-fournisseurClient{
+
+
+    position: relative;
+}
+
+.label-detail-fournisseurClient{
+    margin-left: 5px;
+    margin-top: 16px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(122, 118, 118);
+}
+
+.show-remark{
+    position: relative;
+    bottom: 30px;
+    padding-bottom: 235px;
+
+
+}
+
+.showRemarkfc{
+    position: absolute;
+    left: 140px;
+    top: 18px;
+}
+
+.showNamefc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showUserfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.show-user{
+    position: relative;
+    /* left: 180px; */
+    bottom: 37px;
+}
+
+
+.showEmailfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showContactfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showAdressfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showVillefc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showSocietyfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showGSM1fc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showGSM2fc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+.showCategoryfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showProductfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.show-product-fournisseurClient{
+    margin-top: 17px;
+}
+
+/* query  */
+
+
+#showNamefc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showEmailfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showContactfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showAdressfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showVillefc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showSocietyfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showGSM1fc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showGSM2fc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showCategoryfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#show-product-fournisseurClient{
+    margin-top: 17px;
+}
+
+
+#show-remark{
+    position: relative;
+    bottom: 30px;
+    padding-bottom: 235px;
+
+
+}
+
+
+#showUserfc{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showRemarkfc{
+    position: absolute;
+    left: 140px;
+    top: 18px;
+}

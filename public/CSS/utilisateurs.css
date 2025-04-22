@@ -1,0 +1,62 @@
+
+
+.show-info-user{
+
+
+    position: relative;
+}
+
+.label-detail-user{
+    margin-left: 5px;
+    margin-top: 16px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(122, 118, 118);
+}
+
+
+#showNameUser{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showEmailUser{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showContactUser{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showAdressUser{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showRoleUser{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showProductUser{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showCategoryUser{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.show-product-user{
+    margin-top: 17px;
+}

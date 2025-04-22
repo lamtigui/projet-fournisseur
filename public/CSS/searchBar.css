@@ -1,0 +1,14 @@
+#fa-search{
+    position: absolute;
+    top: 10px;
+    left: 8px;
+}
+
+.form-label{
+    margin-left: 5px;
+    margin-top: 16px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(122, 118, 118);
+}
+

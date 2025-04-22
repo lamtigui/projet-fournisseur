@@ -1,0 +1,108 @@
+body {
+    background-color: #ebe9ef;
+}
+
+nav {
+    background-color: #4070f4;
+    padding: 11px;
+    position: relative;
+    height: 165px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+.line-nav {
+    height: 2px; /* Épaisseur de la ligne */
+    background-color: white; /* Couleur de la ligne */
+    width: 80%; /* Largeur de la ligne (80% de la navbar) */
+    margin: 30px auto; /* Centre la ligne et ajoute de l'espace en haut et en bas */
+}
+
+.row1-nav {
+    display: flex;
+    justify-content: space-between; /* Espace entre les éléments */
+    align-items: center; /* Aligner verticalement */
+    /* position: relative; Pour que l'input puisse se positionner correctement */
+}
+
+.row2-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.row1-input-group {
+    display: flex;
+    gap: 20px;
+}
+
+.search-input {
+    outline: none;
+    border: none;
+    display: none; /* Caché au départ */
+    position: relative;
+    top: 20px;
+    right: 270px;
+    /* position: absolute; Positionnement absolu */
+    /* top: 50%; Centré verticalement */
+    /* right: 0; Aligné à droite */
+    transform: translateY(-50%); /* Ajustement pour le centrage */
+    padding: 10px;
+    height: 27px;
+    font-size: 16px;
+    font-weight: 400;
+    border-bottom: 1px solid #000;
+    transition: all 0.3s ease;
+    outline: none;
+    width: 250px; /* Largeur de l'input */
+    border-radius: 8px;
+}
+
+.search-input.active {
+    display: inline-block; /* Rendre visible */
+}
+
+.fas.active {
+    display: none; /* Cacher l'icône */
+}
+
+.logo{
+    position: relative;
+    left: 260px;
+    top: 10px;
+    color: #ebe9ef;
+}
+
+.fas{
+    position: absolute;
+    top: 25px;
+    right: 260px;
+    /* border: 2px solid white; */
+
+
+}
+
+#close-icon {
+    cursor: pointer; /* Changer le curseur pour indiquer que c'est cliquable */
+    margin-left: 10px; /* Un petit espacement à gauche de l'input */
+}
+
+.submit-input{
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    padding: 10px;
+    position: relative;
+    bottom: 5px;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+    font-weight: bold;
+    color: #ebe9ef;
+}

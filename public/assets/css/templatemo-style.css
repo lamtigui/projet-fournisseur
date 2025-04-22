@@ -1,0 +1,824 @@
+/* Universal Styles */
+* {
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    font-size: 13px;
+}
+
+body,
+.templatemo-left-nav {
+    background: #1f2124;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.6em;
+}
+
+h3 {
+    color: #7f7f7f;
+    font-size: 1.4em;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+nav li {
+    font-size: 1.1em;
+    list-style: none;
+    text-transform: uppercase;
+}
+
+.templatemo-inline-block {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.templatemo-block {
+    display: block;
+}
+
+.templatemo-position-relative {
+    position: relative;
+}
+
+.blue-text {
+    color: #39ADB4;
+}
+
+.white-text {
+    color: white;
+}
+
+.green-bg {
+    background-color: #39ADB4;
+}
+
+.yellow-bg {
+    background-color: #D8D138;
+}
+
+.white-bg {
+    background-color: white;
+}
+
+.white-bg .fa-times {
+    background-color: #d7d7d7;
+}
+
+.white-bg .fa-times:hover {
+    background: #83ccd1;
+}
+
+.orange-bg {
+    background-color: #F17A54;
+    color: white;
+}
+
+.orange-bg .fa-times {
+    background-color: #F0A790;
+}
+
+.orange-bg .fa-times:hover {
+    background-color: #E14311;
+}
+
+.pink-bg {
+    background-color: #D7425C;
+    color: white;
+}
+
+.pink-bg .fa-times {
+    background-color: #E57C8F;
+}
+
+.pink-bg .fa-times:hover {
+    background-color: #BD1F3B;
+}
+
+.blue-bg {
+    background-color: #3275BB;
+    color: white;
+}
+
+.blue-bg .fa-times {
+    background-color: #6792C0;
+}
+
+.blue-bg .fa-times:hover {
+    background-color: #2C639C;
+}
+
+.light-gray-bg {
+    background-color: #efefef;
+}
+
+/* Padding & Margin */
+.padding-right-25 {
+    padding-right: 25px;
+}
+
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.margin-bottom-5 {
+    margin-bottom: 5px;
+}
+
+.margin-bottom-10 {
+    margin-bottom: 10px;
+}
+
+.margin-bottom-30 {
+    margin-bottom: 30px;
+}
+
+.margin-bottom-70 {
+    margin-bottom: 70px;
+}
+
+.margin-right-15 {
+    margin-right: 15px;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.no-border {
+    border: none;
+}
+
+.border-radius-10 {
+    border-radius: 10px;
+}
+
+footer {
+    padding: 15px;
+}
+
+/* Left Column */
+.templatemo-sidebar {
+    background-color: #1f2124;
+    width: 265px;
+    min-height: 100vh;
+    /* Full height */
+    position: fixed;
+    /* Keep it fixed on the left */
+    left: 0;
+    top: 0;
+}
+
+/* Sidebar menu (active and hover) */
+.templatemo-left-nav li {
+    font-weight: 500;
+}
+
+.templatemo-left-nav a.active,
+.templatemo-left-nav a:hover {
+    background: #18191b;
+    border-left: 5px solid #13895F;
+}
+
+.templatemo-left-nav a {
+    color: #e9e9ea;
+    display: block;
+    padding-top: 25px;
+    padding-right: 5px;
+    padding-bottom: 25px;
+    padding-left: 10px;
+    transition: all 0.3s ease;
+}
+
+.templatemo-left-nav .fa .fas {
+    margin-right: 15px;
+}
+
+.templatemo-left-nav {
+    display: none;
+    /* Hidden by default */
+}
+
+.form-control:focus {
+    border-color: #13895F;
+    outline: 0;
+    box-shadow: inset 0 1px 1px rgba(19, 137, 95, .075), 0 0 8px rgba(19, 137, 95, .6);
+}
+
+/* Mobile Menu (Hamburger icon) */
+.mobile-menu-icon {
+    cursor: pointer;
+    display: none;
+}
+
+.mobile-menu-icon .fa {
+    color: #fff;
+    background-color: rgba(19, 137, 95, 0.4);
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+    padding-top: 9px;
+    padding-left: 11px;
+}
+
+/* Initially hide the sidebar */
+#app-sidepanel {
+    width: 0;
+    position: fixed;
+    min-height: 100vh;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    font-size: .875rem;
+    transition: width 0.3s ease-in-out;
+    border-right: 1px solid #e7e9ed;
+    z-index: 9999;
+}
+
+/* When the sidebar is visible, expand it */
+#app-sidepanel.sidepanel-visible {
+    width: 0;
+    /* You can adjust this width as per your design */
+}
+
+/* Sidebar hidden when not active */
+#app-sidepanel.sidepanel-hidden {
+    width: 0;
+    display: none;
+    /* Ensure it's hidden when closed */
+}
+
+/* Ensure the menu items inside the sidebar are visible when the sidebar is open */
+#app-sidepanel.sidepanel-visible .templatemo-left-nav {
+    display: block;
+    /* Show menu content */
+}
+
+/* Sidebar admin blade */
+.app-sidepanel-admin {
+    position: fixed;
+    min-height: 100vh;
+    height: 100%;
+    left: 0;
+    top: 0;
+    font-size: .875rem;
+    border-right: 1px solid #e7e9ed;
+    z-index: 1000;
+    /* Ensure sidebar stays on top */
+}
+
+/* Custom Styles */
+.center-div {
+    display: flex;
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+}
+
+.form-control::placeholder {
+    color: gray;
+    /* Change this to any color you like */
+    opacity: 0.7;
+    /* Ensures full color visibility in some browsers */
+}
+
+.custom-hr {
+    width: 100%;
+    /* Full width */
+    height: 5px;
+    /* Thickness */
+    background-color: #13895f;
+    /* Your desired color */
+    border: none;
+    margin-bottom: 20px;
+    /* Spacing similar to an <hr> */
+}
+
+
+.det {
+    color: #1f2124;
+    font-size: 14px;
+}
+
+.border-btn {
+    border-radius: 1cap;
+    border-style: inherit;
+}
+
+td,
+th {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+/* css templatemo-site-header */
+.templatemo-site-header {
+    margin: 15px 30px;
+}
+
+.templatemo-site-header h3 {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 800;
+    color: whitesmoke;
+}
+
+
+/* kaiadmin.min.css */
+body {
+    min-height: 100vh;
+    position: relative;
+    background: #f5f7fd;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat
+}
+
+.chat-contacts .list-group-item.unread {
+    background: #f5f7fd
+}
+
+.list-group-messages .list-group-item.unread {
+    background: #f5f7fd
+}
+
+body {
+    background: #f5f7fd
+}
+
+body[data-background-color=bg1] {
+    background: #f5f7fd
+}
+
+.bg-gray1 {
+    background: #f5f7fd !important
+}
+
+
+/* motachabik menu */
+.layout {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar {
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.main-content {
+    flex: 1;
+    margin-left: 200px;
+    /* largeur de la sidebar */
+    margin-top: 60px;
+    /* hauteur du header */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 200px;
+    /* largeur de la sidebar */
+    right: 0;
+    height: 60px;
+}
+
+/* Header */
+.app-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 56px;
+    background: #fff;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, .1);
+    border-bottom: 1px solid #e7e9ed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 1.3rem;
+}
+
+.app-sidepanel .panel-drop {
+    display: none;
+}
+
+.app-sidepanel .sidepanel-inner {
+    position: relative;
+    z-index: 10;
+    background: #000;
+    /* Set black background */
+    box-shadow: rgba(0, 0, 0, .05) 0px 8px 15px;
+    width: 250px;
+    height: 100%;
+}
+
+.app-sidepanel .sidepanel-close {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    right: -2rem;
+    top: 0;
+    color: #fff;
+    font-size: 2rem;
+}
+
+.app-sidepanel.sidepanel-hidden {
+    left: -400px;
+}
+
+.app-sidepanel.sidepanel-visible {
+    left: 0;
+}
+
+.app-sidepanel .app-nav-main {
+    overflow-y: auto;
+    scrollbar-color: rgba(0, 0, 0, .1) #e7e9ed;
+    scrollbar-width: thin;
+}
+
+.app-sidepanel .app-nav-main::-webkit-scrollbar {
+    width: 6px;
+    background-color: #e7e9ed;
+}
+
+.app-sidepanel .app-nav-main::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .1);
+    border-radius: .5rem;
+}
+
+
+/* Content */
+.content-wrapper {
+    margin-left: 262px;
+    /* Space for the sidebar */
+    margin-top: 76px;
+    /* Space for the header */
+    padding: 20px;
+    min-height: 100vh;
+    /* Ensure the content takes the full height of the page */
+    position: relative;
+
+}
+
+.app-user-dropdown {
+    display: inline-block
+}
+
+.app-user-dropdown img {
+    width: 36px;
+    height: 36px
+}
+
+/* Center the pagination container */
+.pagination2 {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Style for each pagination item */
+.pagination2 .page-item {
+    margin: 0 5px;
+}
+
+/* Style for pagination links */
+.pagination2 .page-link {
+    display: block;
+    padding: 8px 15px;
+    background-color: #f8f9fa;
+    color: #15a362;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for links */
+.pagination2 .page-link:hover {
+    background-color: #15a362;
+    color: #fff;
+    border-color: #15a362;
+}
+
+/* Active page styling */
+.pagination2 .page-item.active .page-link {
+    background-color: #15a362;
+    color: white;
+    border-color: #15a362;
+}
+
+/* Disabled items styling */
+.pagination2 .page-item.disabled .page-link {
+    background-color: #e9ecef;
+    color: #6c757d;
+    pointer-events: none;
+    border-color: #dee2e6;
+}
+
+/* Styling for pagination arrows */
+.pagination2 .page-link[aria-label="pagination.previous"] {
+    border-radius: 5px 0 0 5px;
+}
+
+.pagination2 .page-link[aria-label="pagination.next"] {
+    border-radius: 0 5px 5px 0;
+}
+
+@media (max-width: 767px) {
+    .app-header {
+        width: auto;
+        /* Allow it to adjust to screen width */
+        height: auto;
+        /* Adjust height as necessary */
+        display: block;
+        /* Adjust layout as necessary */
+        align-items: unset;
+        /* Remove alignment */
+        padding-right: 0;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .templatemo-site-header {
+        margin-top: 22px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    /* Left side (Hamburger button) */
+    #col-left {
+        display: flex;
+        justify-content: flex-start;
+        /* Align to the left */
+        align-items: center;
+        z-index: 9999999999;
+    }
+
+    /* Right side (User profile) */
+    #col-right {
+        display: flex;
+        justify-content: flex-end;
+        /* Align to the right */
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .sidepanel-toggler {
+        display: block;
+        position: relative;
+        /* Keep it in normal flow */
+    }
+
+    .app-utilities {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+}
+
+/* For mobile screens (reset the sidebar margin) */
+@media (max-width: 768px) {
+
+    /* Adjust the content wrapper when sidebar is hidden */
+    .content-wrapper {
+        margin-left: 0;
+        /* No space for sidebar */
+        margin-top: 56px;
+        /* Space for header */
+    }
+
+    /* When the sidebar is visible, adjust the layout */
+    #app-sidepanel.sidepanel-visible+.content-wrapper {
+        margin-left: 75%;
+        /* Sidebar takes up 75% on mobile */
+    }
+}
+
+/* Media Queries for Smaller Screens */
+@media screen and (max-width: 768px) {
+    #app-sidepanel {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease-in-out;
+        display: none;
+        /* Ensure it's fully hidden on mobile */
+    }
+
+    #app-sidepanel.sidepanel-visible {
+        width: 75%;
+        /* Adjust this based on your needs */
+        display: block;
+    }
+
+    #app-sidepanel.active {
+        width: 75%;
+        /* Adjust based on your needs */
+    }
+
+    .mobile-menu-icon {
+        display: block;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 1000;
+    }
+
+    .sidepanel-drop {
+        display: none;
+        /* Hidden by default */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Transparent black overlay */
+        z-index: 999;
+        /* Ensure it's behind the sidebar but above the rest of the content */
+    }
+
+    .sidepanel-drop.active {
+        display: block;
+        /* Show the overlay when the sidebar is open */
+    }
+
+
+    .templatemo-site-header {
+        margin-top: 22px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+
+    .templatemo-site-header h1 {
+        font-size: 1.2em;
+    }
+}
+
+@media screen and (max-width: 991px) {
+
+    .templatemo-site-header {
+        margin-top: 22px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+    }
+
+}
+
+@media screen and (max-width: 992px) {
+
+    .templatemo-site-header {
+        margin-top: 22px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+
+    }
+
+    .templatemo-site-header h1 {
+        font-size: 1.2em;
+    }
+
+}
+
+@media screen and (max-width: 1199px) {
+    .templatemo-site-header {
+        margin-top: 22px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+
+    }
+}
+
+/* For mobile screens: */
+@media (max-width: 1200px) {
+
+    #app-sidepanel {
+        width: 0;
+        overflow: hidden;
+        transition: width 0.3s ease-in-out;
+        display: none;
+        /* Ensure it's fully hidden on mobile */
+    }
+
+    #app-sidepanel.sidepanel-visible {
+        width: 75%;
+        /* Adjust this based on your needs */
+        display: block;
+    }
+
+    #app-sidepanel.sidepanel-hidden {
+        width: 0;
+    }
+
+    .app-header {
+        width: auto;
+        /* Allow it to adjust to screen width */
+        height: auto;
+        /* Adjust height as necessary */
+        display: block;
+        /* Adjust layout as necessary */
+        align-items: unset;
+        /* Remove alignment */
+        padding-right: 0;
+    }
+
+    /* Left side (Hamburger button) */
+    #col-left {
+        display: flex;
+        justify-content: flex-start;
+        /* Align to the left */
+        align-items: center;
+        z-index: 999999999;
+    }
+
+    /* Right side (User profile) */
+    #col-right {
+        display: flex;
+        justify-content: flex-end;
+        /* Align to the right */
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .sidepanel-toggler {
+        display: block;
+        position: relative;
+        /* Keep it in normal flow */
+    }
+
+    .app-utilities {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    /* Adjust the content wrapper when sidebar is hidden */
+    .content-wrapper {
+        margin-left: 0;
+        /* No space for sidebar */
+        margin-top: 56px;
+        /* Space for header */
+    }
+
+    /* When the sidebar is visible, adjust the layout */
+    #app-sidepanel.sidepanel-visible+.content-wrapper {
+        margin-left: 75%;
+        /* Sidebar takes up 75% on mobile */
+    }
+}
+
+/* Sidebar on mobile: Update the background color */
+@media (max-width: 1200px) {
+    .app-sidepanel .sidepanel-inner {
+        background: #000;
+        /* Black background for mobile */
+    }
+}
+
+@media(max-width: 1199.98px)and (prefers-reduced-motion: reduce) {
+    .app-sidepanel {
+        transition: none
+    }
+}
+
+@media(max-width: 1199.98px) {
+    .app-sidepanel {
+        transition: all .4s ease-in-out;
+        left: -400px
+    }
+}

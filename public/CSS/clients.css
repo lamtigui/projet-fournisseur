@@ -1,0 +1,187 @@
+
+
+.show-info-client{
+
+
+    position: relative;
+}
+
+.label-detail-client{
+    margin-left: 5px;
+    margin-top: 16px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(122, 118, 118);
+}
+
+.show-remark{
+    position: relative;
+    bottom: 30px;
+    padding-bottom: 235px;
+
+}
+
+.showRemarkClient{
+    position: absolute;
+    left: 140px;
+    top: 18px;
+}
+
+
+.showNameClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showEmailClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showContactClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showAdressClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showUserClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.show-user{
+    position: relative;
+    /* left: 180px; */
+    bottom: 37px;
+}
+
+
+.showVilleClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showSocietyClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showGSM1Client{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showGSM2Client{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+.showCategoryClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.showProductClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+.show-product-client{
+    margin-top: 17px;
+}
+
+/* query  */
+
+
+#showNameClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showEmailClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showContactClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showAdressClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showVilleClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showSocietyClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showGSM1Client{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showGSM2Client{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#showCategoryClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#show-product-client{
+    margin-top: 17px;
+}
+
+
+#showUserClient{
+    position: absolute;
+    left: 180px;
+    top: 16px;
+}
+
+#show-remark{
+    position: relative;
+    bottom: 30px;
+    padding-bottom: 235px;
+
+}
+
+#showRemarkClient{
+    position: absolute;
+    left: 140px;
+    top: 18px;
+}
+
