@@ -14682,6 +14682,7 @@ button.close:focus {
 .app-card-orders-table .table .cell2 {
     border-color: #e7e9ed;
     color: #000;
+    text-align: left;
     vertical-align: middle;
     font-size: 1rem;
 }
