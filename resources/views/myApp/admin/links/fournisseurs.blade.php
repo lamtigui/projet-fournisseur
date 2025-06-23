@@ -8,71 +8,102 @@
             <div class="page-utilities">
                 <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
                     <div class="col-auto">
-                        <form action="#" method="GET"
-                            class="table-search-form row gx-1 align-items-center">
+                        <form action="#" method="GET" class="table-search-form row gx-1 align-items-center">
                             <div class="col-auto">
                                 <input type="text" id="searchInput" name="search" class="form-control search-orders"
                                     placeholder="Recherche ... " onkeyup="searchFournisseur()">
                             </div>
-                           
+
                         </form>
                     </div><!--//col-->
 
                     <div class="col-auto d-flex align-items-center gap-2">
                         @if (auth()->user()->role == 'super-admin')
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-pdf"></i> Exporter en pdf
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Prosperts</a></li>
-                                <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-excel"></i> Exporter en Excel
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i class="fas fa-file-excel"></i> Exporter Prosperts</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i class="fas fa-file-excel"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-pdf"></i> Exporter en pdf
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Prosperts</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-excel"></i> Exporter en Excel
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Prosperts</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
                         @elseif (auth()->user()->role == 'admin')
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-pdf"></i> Exporter en pdf
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Prosperts</a></li>
-                                <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-excel"></i> Exporter en Excel
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i class="fas fa-file-excel"></i> Exporter Prosperts</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i class="fas fa-file-excel"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-pdf"></i> Exporter en pdf
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Prosperts</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-excel"></i> Exporter en Excel
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Prosperts</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
                         @endif
                     </div>
                 </div><!--//row-->
@@ -129,14 +160,16 @@
                             <span class="text-danger">{{ $message }}</span><br>
                         @enderror
                         <label class="form-label"><strong class="det">GSM1 de la société</strong></label>
-                        <input type="tel" class="form-control" name="GSM1_fournisseur" placeholder="Entrer le GSM1..."
-                            value="{{ old('GSM1_fournisseur') }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                        <input type="tel" class="form-control" name="GSM1_fournisseur"
+                            placeholder="Entrer le GSM1..." value="{{ old('GSM1_fournisseur') }}" pattern="[0-9]{10,15}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                         @error('GSM1_fournisseur', 'default')
                             <span class="text-danger">{{ $message }}</span><br>
                         @enderror
                         <label class="form-label"><strong class="det">GSM2 de la société</strong></label>
-                        <input type="tel" class="form-control" name="GSM2_fournisseur" placeholder="Entrer le GSM2..."
-                            value="{{ old('GSM2_fournisseur') }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                        <input type="tel" class="form-control" name="GSM2_fournisseur"
+                            placeholder="Entrer le GSM2..." value="{{ old('GSM2_fournisseur') }}" pattern="[0-9]{10,15}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                         @error('GSM2_fournisseur', 'default')
                             <span class="text-danger">{{ $message }}</span><br>
                         @enderror
@@ -149,7 +182,8 @@
                         @enderror
                         <label class="form-label"><strong class="det">Numero De Telephone</strong></label>
                         <input type="tel" class="form-control" name="tele_fournisseur"
-                            placeholder="Entrer le contact..." value="{{ old('tele_fournisseur') }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                            placeholder="Entrer le contact..." value="{{ old('tele_fournisseur') }}"
+                            pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                         @error('tele_fournisseur', 'default')
                             <span class="text-danger">{{ $message }}</span><br>
                         @enderror
@@ -161,7 +195,7 @@
                         @enderror
                         <label class="form-label"><strong class="det">Lien de la société</strong></label><br>
                         <input type="url" class="form-control" name="lien_fournisseur"
-                            placeholder="Entrer le lien..." value="{{ old('lien_fournisseur') }}"/>
+                            placeholder="Entrer le lien..." value="{{ old('lien_fournisseur') }}" />
                         @error('lien_fournisseur', 'default')
                             <span class="text-danger">{{ $message }}</span> <br>
                         @enderror
@@ -185,25 +219,25 @@
                         @error('categorie_id', 'default')
                             <span class="text-danger">{{ $message }}</span>
                         @enderror
-                         <!-- Label pour les sous-catégories, caché tant qu'une catégorie n'est pas sélectionnée -->
-                         <label for="sous-categorie" class="form-label" id="label-sous-categorie"
-                         {{ request('categorie_id') ? '' : 'style=display:none;' }}>
-                         <strong class="det">Sous-Catégorie</strong>
-                     </label>
+                        <!-- Label pour les sous-catégories, caché tant qu'une catégorie n'est pas sélectionnée -->
+                        <label for="sous-categorie" class="form-label" id="label-sous-categorie"
+                            {{ request('categorie_id') ? '' : 'style=display:none;' }}>
+                            <strong class="det">Sous-Catégorie</strong>
+                        </label>
 
-                     <!-- Sélecteur de sous-catégorie, caché tant qu'une catégorie n'est pas sélectionnée -->
-                     <select id="sous-categorie" class="form-control" name="sous_categorie_id"
-                         {{ request('categorie_id') ? '' : 'style=display:none;' }}>
-                         <option value="">Sélectionner une sous-catégorie</option>
-                         @if (request('categorie_id'))
-                             @foreach ($sousCategories as $sousCategorie)
-                                 <option value="{{ $sousCategorie->id }}"
-                                     {{ request('sous_categorie_id') == $sousCategorie->id ? 'selected' : '' }}>
-                                     {{ $sousCategorie->nom_produit }}
-                                 </option>
-                             @endforeach
-                         @endif
-                     </select>
+                        <!-- Sélecteur de sous-catégorie, caché tant qu'une catégorie n'est pas sélectionnée -->
+                        <select id="sous-categorie" class="form-control" name="sous_categorie_id"
+                            {{ request('categorie_id') ? '' : 'style=display:none;' }}>
+                            <option value="">Sélectionner une sous-catégorie</option>
+                            @if (request('categorie_id'))
+                                @foreach ($sousCategories as $sousCategorie)
+                                    <option value="{{ $sousCategorie->id }}"
+                                        {{ request('sous_categorie_id') == $sousCategorie->id ? 'selected' : '' }}>
+                                        {{ $sousCategorie->nom_produit }}
+                                    </option>
+                                @endforeach
+                            @endif
+                        </select>
 
                     </div>
                     <div class="modal-footer">
@@ -234,11 +268,11 @@
                                 <th class="cell">Catégorie</th>
                                 <th class="cell">Contacté Par</th>
                                 <th class="cell text-end">
-                                        <button type="button" class="btn app-btn-secondary" data-bs-toggle="modal"
-                                            data-bs-target="#ModalAddSupplier">
-                                            Ajouter
-                                        </button>
-                                  
+                                    <button type="button" class="btn app-btn-secondary" data-bs-toggle="modal"
+                                        data-bs-target="#ModalAddSupplier">
+                                        Ajouter
+                                    </button>
+
                                 </th>
                             </tr>
                         </thead>
@@ -250,27 +284,41 @@
                             @foreach ($fournisseurs as $fournisseur)
                                 <tr>
                                     <td class="cell2">
-                                        {!! !empty($fournisseur->nomSociete_fournisseur) ? $fournisseur->nomSociete_fournisseur : '<span class="text-danger">Particulier</span>' !!}
+                                        {!! !empty($fournisseur->nomSociete_fournisseur)
+                                            ? $fournisseur->nomSociete_fournisseur
+                                            : '<span class="text-danger">Particulier</span>' !!}
                                     </td>
                                     <td class="cell2">
-                                        {!! !empty($fournisseur->GSM1_fournisseur) ? $fournisseur->GSM1_fournisseur : '<span class="text-danger">Non disponible</span>' !!}
+                                        {!! !empty($fournisseur->GSM1_fournisseur)
+                                            ? $fournisseur->GSM1_fournisseur
+                                            : '<span class="text-danger">Non disponible</span>' !!}
                                     </td>
                                     <td class="cell2">
-                                        {!! !empty($fournisseur->GSM2_fournisseur) ? $fournisseur->GSM2_fournisseur : '<span class="text-danger">Non disponible</span>' !!}
+                                        {!! !empty($fournisseur->GSM2_fournisseur)
+                                            ? $fournisseur->GSM2_fournisseur
+                                            : '<span class="text-danger">Non disponible</span>' !!}
                                     </td>
                                     <td class="cell2">
-                                        {!! !empty($fournisseur->nom_fournisseur) ? $fournisseur->nom_fournisseur : '<span class="text-danger">Non disponible</span>' !!}
+                                        {!! !empty($fournisseur->nom_fournisseur)
+                                            ? $fournisseur->nom_fournisseur
+                                            : '<span class="text-danger">Non disponible</span>' !!}
                                     </td>
                                     <td class="cell2">
-                                        {!! !empty($fournisseur->tele_fournisseur) ? $fournisseur->tele_fournisseur : '<span class="text-danger">Non disponible</span>' !!}
+                                        {!! !empty($fournisseur->tele_fournisseur)
+                                            ? $fournisseur->tele_fournisseur
+                                            : '<span class="text-danger">Non disponible</span>' !!}
                                     </td>
                                     <td class="cell2">
-                                        {!! !empty($fournisseur->email_fournisseur) ? $fournisseur->email_fournisseur : '<span class="text-danger">Non disponible</span>' !!}
+                                        {!! !empty($fournisseur->email_fournisseur)
+                                            ? $fournisseur->email_fournisseur
+                                            : '<span class="text-danger">Non disponible</span>' !!}
                                     </td>
                                     <td class="cell2">
-                                        @if(!empty($fournisseur->lien_fournisseur))
-                                            <a href="{{ $fournisseur->lien_fournisseur }}" target="_blank" class="text-primary">
-                                                {{ Str::limit($fournisseur->lien_fournisseur, 20) }} <!-- Limite l'affichage -->
+                                        @if (!empty($fournisseur->lien_fournisseur))
+                                            <a href="{{ $fournisseur->lien_fournisseur }}" target="_blank"
+                                                class="text-primary">
+                                                {{ Str::limit($fournisseur->lien_fournisseur, 20) }}
+                                                <!-- Limite l'affichage -->
                                             </a>
                                         @else
                                             <span class="text-danger">Non disponible</span>
@@ -430,7 +478,8 @@
                                                 </button>
 
                                                 <form class="user-form"
-                                                    action="{{ route('user.select', $fournisseur->id) }}" method="POST">
+                                                    action="{{ route('user.select', $fournisseur->id) }}"
+                                                    method="POST">
                                                     @csrf
                                                     @method('POST')
                                                     <select class="form-select userSelect"
@@ -514,20 +563,20 @@
                                                     </select>
                                                 </form>
                                                 <form class="supplier-form"
-                                                action="{{ route('supplier.select', $fournisseur->id) }}"
-                                                method="POST">
-                                                @csrf
-                                                @method('POST')
-                                                <select class="form-select status-select"
-                                                    aria-label="Default select example" name="status"
-                                                    id="">
-                                                    <option value="">Selectionner la table</option>
-                                                    @foreach ($select as $item)
-                                                        <option value="{{ $item }}">{{ $item }}
-                                                        </option>
-                                                    @endforeach
-                                                </select>
-                                            </form>
+                                                    action="{{ route('supplier.select', $fournisseur->id) }}"
+                                                    method="POST">
+                                                    @csrf
+                                                    @method('POST')
+                                                    <select class="form-select status-select"
+                                                        aria-label="Default select example" name="status"
+                                                        id="">
+                                                        <option value="">Selectionner la table</option>
+                                                        @foreach ($select as $item)
+                                                            <option value="{{ $item }}">{{ $item }}
+                                                            </option>
+                                                        @endforeach
+                                                    </select>
+                                                </form>
                                             </div>
                                         </td>
                                     @endif
@@ -552,7 +601,8 @@
                                                         </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <button type="submit" class="btn btn-success">Ajouter la remarque</button>
+                                                        <button type="submit" class="btn btn-success">Ajouter la
+                                                            remarque</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -576,39 +626,72 @@
                                                 <div class="modal-body">
                                                     <div class="row">
 
-                                                        <div class="col-6 det" style="font-size: 18px">Nom de la socité</div>
-                                                        <div class="col-6 showSocietyfournisseur"><span style="font-size: 18px" id="showSocietyDetail-{{ $fournisseur->id }}"></span></div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">GSM1 de la société</strong></div>
-                                                        <div class="col-6 showGSM1fournisseur"><span style="font-size: 18px" id="showGSM1Detail-{{ $fournisseur->id }}"></span></div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">GSM2 de la société</strong></div>
-                                                        <div class="col-6 showGSM2fournisseur"><span style="font-size: 18px" id="showGSM2Detail-{{ $fournisseur->id }}"></span></div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Personne à contacter</strong></div>
-                                                        <div class="col-6 showNamefournisseur"><span style="font-size: 18px" id="showNameDetail-{{ $fournisseur->id }}"></span></div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Numero De Telephone</strong></div>
-                                                        <div class="col-6 showContactfournisseur"><span style="font-size: 18px" id="showContactDetail-{{ $fournisseur->id }}"></span></div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Email</strong></div>
-                                                        <div class="col-6 showEmailfournisseur"><span style="font-size: 18px" id="showEmailDetail-{{ $fournisseur->id }}"></span></div>
+                                                        <div class="col-6 det" style="font-size: 18px">Nom de la socité
+                                                        </div>
+                                                        <div class="col-6 showSocietyfournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showSocietyDetail-{{ $fournisseur->id }}"></span>
+                                                        </div>
 
-                                                        <div class="col-6 det" style="font-size: 18px">Lien de la société</strong></div>
-                                                        <div class="col-6 showLienfournisseur"><a href="{{ $fournisseur->lien_fournisseur }}" target="_blank" class="text-primary" style="font-size: 18px">
-                                                            {{ Str::limit($fournisseur->lien_fournisseur, 20) }} <!-- Limite l'affichage -->
-                                                        </a></div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Ville</strong></div>
-                                                        <div class="col-6 showVillefournisseur"><span style="font-size: 18px" id="showVilleDetail-{{ $fournisseur->id }}"></span></div>
-                                                
-                                                
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Les catégories</strong></div>
+                                                        <div class="col-6 det" style="font-size: 18px">GSM1 de la
+                                                            société</strong></div>
+                                                        <div class="col-6 showGSM1fournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showGSM1Detail-{{ $fournisseur->id }}"></span></div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">GSM2 de la
+                                                            société</strong></div>
+                                                        <div class="col-6 showGSM2fournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showGSM2Detail-{{ $fournisseur->id }}"></span></div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">Personne à
+                                                            contacter</strong></div>
+                                                        <div class="col-6 showNamefournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showNameDetail-{{ $fournisseur->id }}"></span></div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">Numero De
+                                                            Telephone</strong></div>
+                                                        <div class="col-6 showContactfournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showContactDetail-{{ $fournisseur->id }}"></span>
+                                                        </div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">Email</strong>
+                                                        </div>
+                                                        <div class="col-6 showEmailfournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showEmailDetail-{{ $fournisseur->id }}"></span></div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">Lien de la
+                                                            société</strong></div>
+                                                        <div class="col-6 showLienfournisseur"><a
+                                                                href="{{ $fournisseur->lien_fournisseur }}"
+                                                                target="_blank" class="text-primary"
+                                                                style="font-size: 18px">
+                                                                {{ Str::limit($fournisseur->lien_fournisseur, 20) }}
+                                                                <!-- Limite l'affichage -->
+                                                            </a></div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">Ville</strong>
+                                                        </div>
+                                                        <div class="col-6 showVillefournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showVilleDetail-{{ $fournisseur->id }}"></span></div>
+
+
+
+                                                        <div class="col-6 det" style="font-size: 18px">Les
+                                                            catégories</strong></div>
                                                         <div class="col-6">
-                                                            <select class="form-select form-select-sm col-6 info-fournisseur showCategoryfournisseur"
-                                                                aria-label=".form-select-sm example" id="categories-{{ $fournisseur->id }}" style="color: #5d6778">
-                                                                <option class="col-6" value="" selected>Voir la(les) catégories</option>
+                                                            <select
+                                                                class="form-select form-select-sm col-6 info-fournisseur showCategoryfournisseur"
+                                                                aria-label=".form-select-sm example"
+                                                                id="categories-{{ $fournisseur->id }}"
+                                                                style="color: #5d6778">
+                                                                <option class="col-6" value="" selected>Voir
+                                                                    la(les) catégories</option>
                                                                 @foreach ($fournisseur->allCategories as $categorie)
                                                                     <option value="{{ $categorie->id }}">
                                                                         {{ $categorie->nom_categorie }}
@@ -616,21 +699,34 @@
                                                                 @endforeach
                                                             </select>
                                                         </div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Sous-Catégorie</strong></div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">
+                                                            Sous-Catégorie</strong></div>
                                                         <div class="col-6">
-                                                            <select class="form-select form-select-sm col-6 info-fournisseur showProductfournisseur"
-                                                                aria-label=".form-select-sm example" id="products-{{ $fournisseur->id }}" style="color: #5d6778; font-size: 15px"><strong>
-                                                                <option class="col-6" value="" selected>Voir les produits associé</option></strong>
+                                                            <select
+                                                                class="form-select form-select-sm col-6 info-fournisseur showProductfournisseur"
+                                                                aria-label=".form-select-sm example"
+                                                                id="products-{{ $fournisseur->id }}"
+                                                                style="color: #5d6778; font-size: 15px"><strong>
+                                                                    <option class="col-6" value="" selected>Voir
+                                                                        les produits associé</option>
+                                                                </strong>
                                                             </select>
                                                         </div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Contacté Par</strong></div>
-                                                        <div class="col-6 showUserfournisseur"><span style="font-size: 18px" id="showUserDetail-{{ $fournisseur->id }}"></span></div>
-                                                
-                                                        <div class="col-6 det" style="font-size: 18px">Remarque</strong></div>
-                                                        <div class="col-6 showRemarkfournisseur"><span style="font-size: 18px" id="showRemarkDetail-{{ $fournisseur->id }}"></span></div>
-                                                </div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">Contacté
+                                                            Par</strong></div>
+                                                        <div class="col-6 showUserfournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showUserDetail-{{ $fournisseur->id }}"></span></div>
+
+                                                        <div class="col-6 det" style="font-size: 18px">Remarque</strong>
+                                                        </div>
+                                                        <div class="col-6 showRemarkfournisseur"><span
+                                                                style="font-size: 18px"
+                                                                id="showRemarkDetail-{{ $fournisseur->id }}"></span>
+                                                        </div>
+                                                    </div>
 
                                                 </div>
                                             </div>
@@ -676,7 +772,9 @@
                                                             société</strong></label>
                                                     <input type="tel" class="form-control" name="newGSM1_fournisseur"
                                                         placeholder="Entrer GSM1..." id="updateSupplierGSM1"
-                                                        value="{{ old('newGSM1_fournisseur', $fournisseur->GSM1_fournisseur) }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                                                        value="{{ old('newGSM1_fournisseur', $fournisseur->GSM1_fournisseur) }}"
+                                                        pattern="[0-9]{10,15}"
+                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                                                     @if ($errors->has('newGSM1_fournisseur'))
                                                         <span class="text-danger">
                                                             {{ $errors->first('newGSM1_fournisseur') }}</span><br>
@@ -688,7 +786,9 @@
                                                             société</strong></label>
                                                     <input type="tel" class="form-control" name="newGSM2_fournisseur"
                                                         placeholder="Entrer GSM2..." id="updateSupplierGSM2"
-                                                        value="{{ old('newGSM2_fournisseur', $fournisseur->GSM2_fournisseur) }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                                                        value="{{ old('newGSM2_fournisseur', $fournisseur->GSM2_fournisseur) }}"
+                                                        pattern="[0-9]{10,15}"
+                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                                                     @if ($errors->has('newGSM2_fournisseur'))
                                                         <span class="text-danger">
                                                             {{ $errors->first('newGSM2_fournisseur') }}</span><br>
@@ -712,7 +812,9 @@
                                                             Telephone</strong></label>
                                                     <input id="updateSupplierContact" type="tel" class="form-control"
                                                         name="newTele_fournisseur" placeholder="Entrer le contact..."
-                                                        value="{{ old('newTele_fournisseur', $fournisseur->tele_fournisseur) }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                                                        value="{{ old('newTele_fournisseur', $fournisseur->tele_fournisseur) }}"
+                                                        pattern="[0-9]{10,15}"
+                                                        oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                                                     @if ($errors->has('newTele_fournisseur'))
                                                         <span class="text-danger">
                                                             {{ $errors->first('newTele_fournisseur') }}</span><br>
@@ -736,7 +838,7 @@
                                                             société</strong></label>
                                                     <input type="tel" class="form-control" name="newLien_fournisseur"
                                                         placeholder="Entrer le lien..." id="updateSupplierLien"
-                                                        value="{{ old('newLien_fournisseur', $fournisseur->lien_fournisseur) }}"/>
+                                                        value="{{ old('newLien_fournisseur', $fournisseur->lien_fournisseur) }}" />
                                                     @if ($errors->has('newLien_fournisseur'))
                                                         <span class="text-danger">
                                                             {{ $errors->first('newLien_fournisseur') }}</span><br>
@@ -789,24 +891,22 @@
                     @endif
                 </div>
             </div>
-        </div> 
-        <div >
+        </div>
+        <div>
             <div>
                 {{ $fournisseurs->links('vendor.pagination.bootstrap-4') }}
-    
+
             </div>
-    
+
         </div>
     </div>
     </div>
-    
+
 @endsection
 
 
 @section('script')
-
-
-   <script>
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const select = document.getElementById('pagination-select');
             const form = document.getElementById('pagination-form');
@@ -820,78 +920,78 @@
         });
     </script>
 
- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-    $(document).ready(function() {
-        // Quand une catégorie est sélectionnée
-        $('#categorie').change(function() {
-            var categorieId = $(this).val();
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Quand une catégorie est sélectionnée
+            $('#categorie').change(function() {
+                var categorieId = $(this).val();
 
-            // Si une catégorie est sélectionnée
-            if (categorieId) {
-                // Afficher le champ des sous-catégories et son label
-                $('#label-sous-categorie').show();
-                $('#sous-categorie').show();
+                // Si une catégorie est sélectionnée
+                if (categorieId) {
+                    // Afficher le champ des sous-catégories et son label
+                    $('#label-sous-categorie').show();
+                    $('#sous-categorie').show();
 
-                // Faire une requête AJAX pour récupérer les sous-catégories
-                $.ajax({
-                    url: '/sous-categories/' + categorieId, // L'URL de ta route
-                    type: 'GET',
-                    success: function(response) {
-                        // Vider le select de sous-catégories
-                        $('#sous-categorie').empty();
-                        $('#sous-categorie').append(
-                            '<option value="">Sélectionner une sous-catégorie</option>');
+                    // Faire une requête AJAX pour récupérer les sous-catégories
+                    $.ajax({
+                        url: '/sous-categories/' + categorieId, // L'URL de ta route
+                        type: 'GET',
+                        success: function(response) {
+                            // Vider le select de sous-catégories
+                            $('#sous-categorie').empty();
+                            $('#sous-categorie').append(
+                                '<option value="">Sélectionner une sous-catégorie</option>');
 
-                        // Ajouter les sous-catégories au select
-                        $.each(response, function(index, sousCategorie) {
-                            $('#sous-categorie').append('<option value="' +
-                                sousCategorie.id + '">' + sousCategorie
-                                .nom_produit + '</option>');
-                        });
-                    },
-                });
-            } else {
-                // Si aucune catégorie n'est sélectionnée, cacher le champ des sous-catégories et son label
-                $('#label-sous-categorie').hide();
-                $('#sous-categorie').hide();
-            }
+                            // Ajouter les sous-catégories au select
+                            $.each(response, function(index, sousCategorie) {
+                                $('#sous-categorie').append('<option value="' +
+                                    sousCategorie.id + '">' + sousCategorie
+                                    .nom_produit + '</option>');
+                            });
+                        },
+                    });
+                } else {
+                    // Si aucune catégorie n'est sélectionnée, cacher le champ des sous-catégories et son label
+                    $('#label-sous-categorie').hide();
+                    $('#sous-categorie').hide();
+                }
+            });
         });
-    });
-</script>
+    </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const updateSupplierModal = document.getElementById('updateSupplierModal');
-        updateSupplierModal.addEventListener('show.bs.modal', event => {
-            const button = event.relatedTarget;
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const updateSupplierModal = document.getElementById('updateSupplierModal');
+            updateSupplierModal.addEventListener('show.bs.modal', event => {
+                const button = event.relatedTarget;
 
-            const supplierId = button.getAttribute('data-id');
-            const supplierName = button.getAttribute('data-name');
-            const supplierEmail = button.getAttribute('data-email');
-            const supplierContact = button.getAttribute('data-tele');
-            const supplierVille = button.getAttribute('data-ville');
-            const supplierSociety = button.getAttribute('data-society');
-            const supplierGSM1 = button.getAttribute('data-GSM1');
-            const supplierGSM2 = button.getAttribute('data-GSM2');
-            const supplierLien = button.getAttribute('data-lien');
-            const supplierCategory = button.getAttribute('data-category');
+                const supplierId = button.getAttribute('data-id');
+                const supplierName = button.getAttribute('data-name');
+                const supplierEmail = button.getAttribute('data-email');
+                const supplierContact = button.getAttribute('data-tele');
+                const supplierVille = button.getAttribute('data-ville');
+                const supplierSociety = button.getAttribute('data-society');
+                const supplierGSM1 = button.getAttribute('data-GSM1');
+                const supplierGSM2 = button.getAttribute('data-GSM2');
+                const supplierLien = button.getAttribute('data-lien');
+                const supplierCategory = button.getAttribute('data-category');
 
 
-            document.getElementById('updateSupplierId').value = supplierId;
-            document.getElementById('updateSupplierName').value = supplierName;
-            document.getElementById('updateSupplierEmail').value = supplierEmail;
-            document.getElementById('updateSupplierContact').value = supplierContact;
-            document.getElementById('updateSupplierVille').value = supplierVille;
-            document.getElementById('updateSupplierSociety').value = supplierSociety;
-            document.getElementById('updateSupplierGSM1').value = supplierGSM1;
-            document.getElementById('updateSupplierGSM2').value = supplierGSM2;
-            document.getElementById('updateSupplierLien').value = supplierLien;
-            document.getElementById('updateSupplierCategorie').value = supplierCategory;
+                document.getElementById('updateSupplierId').value = supplierId;
+                document.getElementById('updateSupplierName').value = supplierName;
+                document.getElementById('updateSupplierEmail').value = supplierEmail;
+                document.getElementById('updateSupplierContact').value = supplierContact;
+                document.getElementById('updateSupplierVille').value = supplierVille;
+                document.getElementById('updateSupplierSociety').value = supplierSociety;
+                document.getElementById('updateSupplierGSM1').value = supplierGSM1;
+                document.getElementById('updateSupplierGSM2').value = supplierGSM2;
+                document.getElementById('updateSupplierLien').value = supplierLien;
+                document.getElementById('updateSupplierCategorie').value = supplierCategory;
 
+            });
         });
-    });
-</script>
+    </script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const selects = document.querySelectorAll('.status-select');
@@ -1017,38 +1117,38 @@
     </script>
 
 
-<script>
-    function searchFournisseur() {
-        let input = document.getElementById('searchInput');
-        let filter = input.value.toLowerCase();
-        let table = document.getElementById('fournisseur-table');
-        let tr = table.getElementsByTagName('tr');
+    <script>
+        function searchFournisseur() {
+            let input = document.getElementById('searchInput');
+            let filter = input.value.toLowerCase();
+            let table = document.getElementById('fournisseur-table');
+            let tr = table.getElementsByTagName('tr');
 
 
-        for (let i = 1; i < tr.length; i++) {
-            let tds = tr[i].getElementsByTagName('td');
-            let matchFound = false;
+            for (let i = 1; i < tr.length; i++) {
+                let tds = tr[i].getElementsByTagName('td');
+                let matchFound = false;
 
 
-            for (let j = 0; j < tds.length; j++) {
-                let td = tds[j];
-                if (td) {
-                    if (td.textContent.toLowerCase().includes(filter)) {
-                        matchFound = true;
-                        break;
+                for (let j = 0; j < tds.length; j++) {
+                    let td = tds[j];
+                    if (td) {
+                        if (td.textContent.toLowerCase().includes(filter)) {
+                            matchFound = true;
+                            break;
+                        }
                     }
                 }
-            }
 
 
-            if (matchFound) {
-                tr[i].style.display = '';
-            } else {
-                tr[i].style.display = 'none';
+                if (matchFound) {
+                    tr[i].style.display = '';
+                } else {
+                    tr[i].style.display = 'none';
+                }
             }
         }
-    }
-</script>
+    </script>
 @endsection
 @section('content2')
     <div class="modal fade" id="QueryModalSupplierDetails" tabindex="-1" aria-labelledby="exampleModalLabel"
