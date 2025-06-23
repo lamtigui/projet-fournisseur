@@ -18,63 +18,95 @@
 
                     <div class="col-auto d-flex align-items-center gap-2">
                         @if (auth()->user()->role == 'super-admin')
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-pdf"></i> Exporter en pdf
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Prospert</a></li>
-                                <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-excel"></i> Exporter en Excel
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i class="fas fa-file-excel"></i> Exporter Prospert</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i class="fas fa-file-excel"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-pdf"></i> Exporter en pdf
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Prospert</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-excel"></i> Exporter en Excel
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Prospert</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
                         @elseif (auth()->user()->role == 'admin')
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-pdf"></i> EXPORTER en pdf
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Prospert</a></li>
-                                <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
-                        <div class="dropdown">
-                            <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                                <i class="fas fa-file-excel"></i> Exporter en Excel
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="exportDropdown">
-                                <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i class="fas fa-file-excel"></i> Exporter Prospert</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i class="fas fa-file-excel"></i> Exporter Clients</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
-                                <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
-                            </ul>
-                        </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-pdf"></i> EXPORTER en pdf
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('clients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Prospert</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('prospects.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurs.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('fournisseurClients.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('allData.pdf') }}"><i
+                                                class="fas fa-file-pdf"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown">
+                                <button class="btn app-btn-secondary dropdown-toggle" type="button" id="exportDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i class="fas fa-file-excel"></i> Exporter en Excel
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="exportDropdown">
+                                    <li><a class="dropdown-item" href="{{ route('export.clients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Prospert</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.prospects') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Clients</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurs') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseurs</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('export.fournisseurClients') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Fournisseur Clients</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="{{ route('export.excel') }}"><i
+                                                class="fas fa-file-excel"></i> Exporter Toutes les Tables</a></li>
+                                </ul>
+                            </div>
                         @endif
                     </div>
-                    
-                    
+
+
                 </div><!--//row-->
             </div><!--//table-utilities-->
         </div><!--//col-auto-->
@@ -131,22 +163,23 @@
 
 
                         <label class="form-label"><strong class="det">GSM1 de la société</strong></label><br>
-                        <input type="tel" class="form-control" name="GSM1_client"
-                            placeholder="Entrer le GSM1..." value="{{ old('GSM1_client') }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                        <input type="tel" class="form-control" name="GSM1_client" placeholder="Entrer le GSM1..."
+                            value="{{ old('GSM1_client') }}" pattern="[0-9]{10,15}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                         @error('GSM1_client', 'default')
                             <span class="text-danger">{{ $message }}</span> <br>
-
                         @enderror
 
 
                         <label class="form-label"><strong class="det">GSM2 de la société</strong></label><br>
-                        <input type="tel" class="form-control" name="GSM2_client"
-                            placeholder="Entrer le GSM2..." value="{{ old('GSM2_client') }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                        <input type="tel" class="form-control" name="GSM2_client" placeholder="Entrer le GSM2..."
+                            value="{{ old('GSM2_client') }}" pattern="[0-9]{10,15}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                         @error('GSM2_client', 'default')
                             <span class="text-danger">{{ $message }}</span> <br>
                         @enderror
-                        
-                        
+
+
                         <label class="form-label"><strong class="det">Personne à contacter</strong></label><br>
                         <input type="text" class="form-control" name="nom_client" placeholder="Entrer le client..."
                             value="{{ old('nom_client') }}" />
@@ -156,8 +189,9 @@
 
 
                         <label class="form-label"><strong class="det">Numero de telephone</strong></label><br>
-                        <input type="tel" class="form-control" name="tele_client"
-                            placeholder="Entrer le contact..." value="{{ old('tele_client') }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                        <input type="tel" class="form-control" name="tele_client" placeholder="Entrer le contact..."
+                            value="{{ old('tele_client') }}" pattern="[0-9]{10,15}"
+                            oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                         @error('tele_client', 'default')
                             <span class="text-danger">{{ $message }}</span> <br>
                         @enderror
@@ -172,8 +206,8 @@
 
 
                         <label class="form-label"><strong class="det">Lien de la société</strong></label><br>
-                        <input type="url" class="form-control" name="lien_client"
-                            placeholder="Entrer le lien..." value="{{ old('lien_client') }}"/>
+                        <input type="url" class="form-control" name="lien_client" placeholder="Entrer le lien..."
+                            value="{{ old('lien_client') }}" />
                         @error('lien_client', 'default')
                             <span class="text-danger">{{ $message }}</span> <br>
                         @enderror
@@ -259,7 +293,9 @@
                         @foreach ($clients as $client)
                             <tr>
                                 <td class="cell2">
-                                    {!! !empty($client->nomSociete_client) ? $client->nomSociete_client : '<span class="text-danger">Particulier</span>' !!}
+                                    {!! !empty($client->nomSociete_client)
+                                        ? $client->nomSociete_client
+                                        : '<span class="text-danger">Particulier</span>' !!}
                                 </td>
                                 <td class="cell2">
                                     {!! !empty($client->GSM1_client) ? $client->GSM1_client : '<span class="text-danger">Non disponible</span>' !!}
@@ -277,7 +313,7 @@
                                     {!! !empty($client->email_client) ? $client->email_client : '<span class="text-danger">Non disponible</span>' !!}
                                 </td>
                                 <td class="cell2">
-                                    @if(!empty($client->lien_client))
+                                    @if (!empty($client->lien_client))
                                         <a href="{{ $client->lien_client }}" target="_blank" class="text-primary">
                                             {{ Str::limit($client->lien_client, 20) }} <!-- Limite l'affichage -->
                                         </a>
@@ -598,13 +634,15 @@
                                                 <div class="col-6 det" style="font-size: 18px">Email</strong></div>
                                                 <div class="col-6 showEmailClient"><span style="font-size: 18px"
                                                         id="showEmailDetail-{{ $client->id }}"></span></div>
-                                                
-                                                
+
+
                                                 <div class="col-6 det" style="font-size: 18px">Lien de la société</strong>
                                                 </div>
-                                                <div class="col-6 showLienClient"><a href="{{ $client->lien_client }}" target="_blank" class="text-primary" style="font-size: 18px">
-                                                    {{ Str::limit($client->lien_client, 20) }} <!-- Limite l'affichage -->
-                                                </a></div>
+                                                <div class="col-6 showLienClient"><a href="{{ $client->lien_client }}"
+                                                        target="_blank" class="text-primary" style="font-size: 18px">
+                                                        {{ Str::limit($client->lien_client, 20) }}
+                                                        <!-- Limite l'affichage -->
+                                                    </a></div>
 
                                                 <div class="col-6 det" style="font-size: 18px">Ville</strong></div>
                                                 <div class="col-6 showVilleClient"><span style="font-size: 18px"
@@ -694,7 +732,8 @@
                                 <label class="form-label"><strong class="det">GSM1 de la société</strong></label>
                                 <input type="tel" class="form-control" name="newGSM1_client"
                                     placeholder="Entrer GSM1..." id="updateClientGSM1"
-                                    value="{{ old('newGSM1_client', $client->GSM1_client) }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                                    value="{{ old('newGSM1_client', $client->GSM1_client) }}" pattern="[0-9]{10,15}"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                                 @if ($errors->has('newGSM1_client'))
                                     <span class="text-danger">
                                         {{ $errors->first('newGSM1_client') }}</span> <br>
@@ -705,7 +744,8 @@
                                 <label class="form-label"><strong class="det">GSM2 de la société</strong></label>
                                 <input type="tel" class="form-control" name="newGSM2_client"
                                     placeholder="Entrer GSM2..." id="updateClientGSM2"
-                                    value="{{ old('newGSM2_client', $client->GSM2_client) }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                                    value="{{ old('newGSM2_client', $client->GSM2_client) }}" pattern="[0-9]{10,15}"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                                 @if ($errors->has('newGSM2_client'))
                                     <span class="text-danger">
                                         {{ $errors->first('newGSM2_client') }}</span> <br>
@@ -727,7 +767,8 @@
                                 <label class="form-label"><strong class="det">Numéro De Téléphone</strong></label>
                                 <input id="updateClientContact" type="tel" class="form-control"
                                     name="newTele_client" placeholder="Entrer le contact..."
-                                    value="{{ old('newTele_client', $client->tele_client) }}" pattern="[0-9]{10,15}" oninput="this.value = this.value.replace(/[^0-9]/g, '')"/>
+                                    value="{{ old('newTele_client', $client->tele_client) }}" pattern="[0-9]{10,15}"
+                                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
                                 @if ($errors->has('newTele_client'))
                                     <span class="text-danger">
                                         {{ $errors->first('newTele_client') }}</span> <br>
@@ -750,7 +791,7 @@
                                 <label class="form-label"><strong class="det">Lien de la société</strong></label>
                                 <input type="url" class="form-control" name="newLien_client"
                                     placeholder="Entrer le lien..." id="updateClientLien"
-                                    value="{{ old('newLien_client', $client->lien_client) }}"/>
+                                    value="{{ old('newLien_client', $client->lien_client) }}" />
                                 @if ($errors->has('newLien_client'))
                                     <span class="text-danger">
                                         {{ $errors->first('newLien_client') }}</span> <br>
