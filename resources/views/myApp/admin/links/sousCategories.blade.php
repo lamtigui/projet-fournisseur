@@ -8,8 +8,7 @@
             <div class="page-utilities">
                 <div class="row g-2 justify-content-start justify-content-md-end align-items-center">
                     <div class="col-auto">
-                        <form action="#" method="GET"
-                            class="table-search-form row gx-1 align-items-center">
+                        <form action="#" method="GET" class="table-search-form row gx-1 align-items-center">
                             <div class="col-auto">
                                 <input type="text" id="searchInput" name="search" class="form-control search-orders"
                                     placeholder="Recherche ... " onkeyup="searchSousCategorie()">
@@ -18,12 +17,15 @@
                     </div><!--//col-->
                     <div class="col-auto">
                         @if (auth()->user()->role == 'super-admin')
-                            <a class="btn app-btn-secondary" href="{{ route('sousCategories.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter en pdf</a>
-                            <a href="{{ route('export.sous-categories') }}" class="btn app-btn-secondary"><i class="fas fa-file-excel"></i> Exporter en excel</a>
-
+                            <a class="btn app-btn-secondary" href="{{ route('sousCategories.pdf') }}"><i
+                                    class="fas fa-file-pdf"></i> Exporter en pdf</a>
+                            <a href="{{ route('export.sous-categories') }}" class="btn app-btn-secondary"><i
+                                    class="fas fa-file-excel"></i> Exporter en excel</a>
                         @elseif (auth()->user()->role == 'admin')
-                        <a class="btn app-btn-secondary" href="{{ route('sousCategories.pdf') }}"><i class="fas fa-file-pdf"></i> Exporter en pdf</a>
-                        <a href="{{ route('export.sous-categories') }}" class="btn app-btn-secondary"><i class="fas fa-file-excel"></i> Exporter en excel</a>
+                            <a class="btn app-btn-secondary" href="{{ route('sousCategories.pdf') }}"><i
+                                    class="fas fa-file-pdf"></i> Exporter en pdf</a>
+                            <a href="{{ route('export.sous-categories') }}" class="btn app-btn-secondary"><i
+                                    class="fas fa-file-excel"></i> Exporter en excel</a>
                         @endif
                     </div>
                 </div><!--//row-->
@@ -81,8 +83,8 @@
 
                                 <div class="mb-3">
                                     <label class="form-label"><strong class="det">Description</strong></label>
-                                    <textarea class="form-control" id="exampleFormControlTextarea1"  placeholder="Entrer une description"
-                                        name="texte" style="height: 100px">{{ old('texte') }}</textarea>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Entrer une description" name="texte"
+                                        style="height: 100px">{{ old('texte') }}</textarea>
                                     @error('texte', 'default')
                                         <span class="text-danger">{{ $message }}</span> <br>
                                     @enderror
@@ -226,13 +228,21 @@
                                                         <div class="row">
 
                                                             <div class="col-4 det" style="font-size: 20px">Produit</div>
-                                                            <div class="col-8 showProduct"><span style="font-size: 17px" id="showProduct-{{ $sousCategorie->id }}"></span></div>
+                                                            <div class="col-8 showProduct"><span style="font-size: 17px"
+                                                                    id="showProduct-{{ $sousCategorie->id }}"></span>
+                                                            </div>
 
-                                                            <div class="col-4 det" style="font-size: 20px">Description</div>
-                                                            <div class="col-8 showTextProduct"><span style="font-size: 17px" id="showText-{{ $sousCategorie->id }}"></span></div>
+                                                            <div class="col-4 det" style="font-size: 20px">Description
+                                                            </div>
+                                                            <div class="col-8 showTextProduct"><span
+                                                                    style="font-size: 17px"
+                                                                    id="showText-{{ $sousCategorie->id }}"></span></div>
 
                                                             <div class="col-4 det" style="font-size: 20px">Catégorie</div>
-                                                            <div class="col-8 showCategoryProduct"><span style="font-size: 17px" id="showCategory-{{ $sousCategorie->id }}"></span></div>
+                                                            <div class="col-8 showCategoryProduct"><span
+                                                                    style="font-size: 17px"
+                                                                    id="showCategory-{{ $sousCategorie->id }}"></span>
+                                                            </div>
 
                                                         </div>
                                                     </div>
@@ -275,7 +285,8 @@
 
                             <div class="mb-3">
                                 <label class="form-label"><strong class="det">Description</strong></label>
-                                <textarea class="form-control" id="updateProductText" placeholder="Entrer une description" name="newTexte" style="height: 100px">{{ old('newTexte', htmlspecialchars($sousCategorie->texte)) }} </textarea>
+                                <textarea class="form-control" id="updateProductText" placeholder="Entrer une description" name="newTexte"
+                                    style="height: 100px">{{ old('newTexte', htmlspecialchars($sousCategorie->texte)) }} </textarea>
                                 @if ($errors->has('newTexte'))
                                     <span class="text-danger">{{ $errors->first('newTexte') }}</span>
                                 @endif
@@ -312,7 +323,7 @@
         </div>
     </div>
     <div>
-       
+
         <div>
             {{ $getSousCategories->links('vendor.pagination.bootstrap-4') }}
 
@@ -423,36 +434,36 @@
 
         });
     </script>
-  <script>
-    function searchSousCategorie() {
-        let input = document.getElementById('searchInput');
-        let filter = input.value.toLowerCase();
-        let table = document.getElementById('souscategorie-table');
-        let tr = table.getElementsByTagName('tr');
+    <script>
+        function searchSousCategorie() {
+            let input = document.getElementById('searchInput');
+            let filter = input.value.toLowerCase();
+            let table = document.getElementById('souscategorie-table');
+            let tr = table.getElementsByTagName('tr');
 
 
-        for (let i = 1; i < tr.length; i++) {
-            let tds = tr[i].getElementsByTagName('td');
-            let matchFound = false;
+            for (let i = 1; i < tr.length; i++) {
+                let tds = tr[i].getElementsByTagName('td');
+                let matchFound = false;
 
 
-            for (let j = 0; j < tds.length; j++) {
-                let td = tds[j];
-                if (td) {
-                    if (td.textContent.toLowerCase().includes(filter)) {
-                        matchFound = true;
-                        break;
+                for (let j = 0; j < tds.length; j++) {
+                    let td = tds[j];
+                    if (td) {
+                        if (td.textContent.toLowerCase().includes(filter)) {
+                            matchFound = true;
+                            break;
+                        }
                     }
                 }
-            }
 
 
-            if (matchFound) {
-                tr[i].style.display = '';
-            } else {
-                tr[i].style.display = 'none';
+                if (matchFound) {
+                    tr[i].style.display = '';
+                } else {
+                    tr[i].style.display = 'none';
+                }
             }
         }
-    }
-</script>
+    </script>
 @endsection
